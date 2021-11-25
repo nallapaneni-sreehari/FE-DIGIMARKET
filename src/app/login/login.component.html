@@ -1,0 +1,85 @@
+<div class="register">
+
+    <div fxLayoutAlign="center center" fxFlexFill class="main-div">
+        <!-- <div class="row">
+            <div class="col-md-3 register-left">
+                <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
+                <h3>Welcome</h3>
+                <p>You are 30 seconds away from earning your own money!</p>
+                <input type="submit" name="" value="Login"/><br/>
+            </div>
+            <div class="col-md-9 register-right"> -->
+                <mat-card fxFlex="25" class="mat-elevation-z0 mtcard">
+    
+                    <mat-toolbar class="primary-tbar mtcard" fxLayoutAlign="center center">Login Page
+                        <div fxLayoutAlign="center center" style="margin:10px" *ngIf="loginStatus">
+                            <mat-spinner [diameter]="25"></mat-spinner>
+                        </div>
+            
+                    </mat-toolbar>
+            
+                    <form fxLayoutAlign="stretch" fxLayout="column" class="login-form">
+            
+                        <mat-form-field>
+                            <mat-label>Username</mat-label>
+                            <input matInput [(ngModel)]="loginData.username" #username="ngModel" id="username" name="username" placeholder="Enter Username" required
+                            class="primary">
+                        </mat-form-field>
+            
+                        <!-- <span *ngIf="!loginData.password">Password needed</span> -->
+                        <div *ngIf="username.invalid && (username.dirty || username.touched)" class="alert">
+                            <div *ngIf="username.errors?.required" style="color:brown;">
+                                Username is required.
+                            </div>
+                        </div>
+            
+                        <mat-form-field>
+                            <mat-label>Password</mat-label>
+                            <input matInput [(ngModel)]="loginData.password" name="password" #password="ngModel" id="password"
+                             required [type]="hide ? 'password' : 'text'" minlength="4">
+                            <button mat-icon-button matSuffix (click)="hide = !hide" type="button">
+                                <mat-icon *ngIf="hide">visibility_off</mat-icon>
+                                <mat-icon *ngIf="!hide">visibility</mat-icon>
+                            </button>
+                        </mat-form-field>
+            
+                        <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert">
+                            <div *ngIf="password.errors?.required" style="color:brown;">
+                                Password is required.
+                            </div>
+                        </div>
+            
+                        <div *ngIf="password.errors?.minlength" style="color:brown;">
+                            Password must be at least 4 characters long.
+                        </div>
+            
+                        <button mat-raised-button type="submit" (click)="onLogin()" class="btn mtcard">Login</button>
+            
+                        <div fxLayoutAlign="center center">
+                            <p style="margin-top:25px">Don't have an Account ? &nbsp;
+                                <a routerLink="/signup">Signup Here.</a>
+                            </p>
+                        </div>
+            
+                        <div fxLayoutAlign="center center">
+                            <p style="margin-top:25px">Forgot Password ? &nbsp;
+                                <a routerLink="/resetpassword">Reset Here.</a>
+                            </p>
+                        </div>
+            
+                    </form>
+                    
+                    <div fxLayoutAlign="center center" *ngIf="this.loginResponse.status=='error'" style="color:brown;">
+                        Invalid Username Or Password.
+                    </div>
+            
+                </mat-card>
+            <!-- </div>
+        </div>
+      -->
+    </div>
+</div>
+
+<!-- <div *ngIf="loginStatus">
+
+</div> -->

@@ -1,0 +1,145 @@
+<div class="container-fluid page" style="overflow: hidden;">
+    <div class="page__box p-3 mt-2" style="height: 875px;">Home
+        <div class="page__content shadow p-3 position-relative"  style="margin-top: 36px; height: 600px;">
+            <div class="page__content-data position-relative">
+                <!-- Home page content is placed here..! -->
+                <div class="row row-no-gutters" style="overflow-y: auto; height: 770px;">
+
+                    <div class="col-md-4" style="margin-top: 25px;" *ngFor="let user of userData">
+                        <mat-card class="example-card">
+                            <mat-card-header>
+                              <!-- <div mat-card-avatar class="example-header-image"></div> -->
+                            <img mat-card-avatar class="example-header-image" src="{{user.profile}}" alt="Photo of {{user.userName}}">
+
+                              <mat-card-title>{{user.userName}}</mat-card-title>
+                              <mat-card-subtitle>{{user.userId}}</mat-card-subtitle>
+                            </mat-card-header>
+
+                            <!-- <ng-image-slider 
+                            [images]="user.img"
+                            [imageSize]="{width: '95%', height: '200px', space:1}"
+                            >
+                            </ng-image-slider> -->
+
+
+                            <!-- <img mat-card-image src="{{user.img}}" alt="Photo of a Shiba Inu"> -->
+                            
+                            <!-- <ng-image-slider [images]="user.img" [manageImageRatio]="false">
+                            </ng-image-slider> -->
+
+                            <ng-image-slider [images]="user.img" [manageImageRatio]="false"
+                                  [imageSize]="{width: 315, height: 200, space:10}" [animationSpeed]="1">
+                            </ng-image-slider>
+
+                            <mat-card-content>
+                              <p>
+                                {{user.desc}}
+                              </p>
+                            </mat-card-content>
+                            <mat-card-actions>
+                                <button mat-button title="Like">
+                                <span>100</span>&nbsp;
+                                <!-- <mat-icon>favorite_border</mat-icon> -->
+                                <mat-icon>favoriter</mat-icon>
+                                
+                              </button>
+
+                              <button mat-button title="Share">
+                                <mat-icon>share</mat-icon>
+                              </button>
+
+                              <button mat-button title="Save to Collection">
+                                <mat-icon>bookmark</mat-icon>
+                              </button>
+
+                              <button mat-button title="Contact this Person">
+                                <mat-icon> message</mat-icon>
+                              </button>
+
+                              <button mat-button title="View phone number">
+                                <span class="material-icons">
+                                  call
+                                  </span>
+                              </button>
+                              
+                            </mat-card-actions>
+                          </mat-card>
+                    </div>
+                    <!-- <div class="col-md-4" style="margin-top: 25px;">
+                        <mat-card class="example-card">
+                            <mat-card-header>
+                              <div mat-card-avatar class="example-header-image"></div>
+                              <mat-card-title>Shiba Inu</mat-card-title>
+                              <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+                            </mat-card-header>
+                            <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+                            <mat-card-content>
+                              <p>
+                                The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                                A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                                bred for hunting.
+                              </p>
+                            </mat-card-content>
+                            <mat-card-actions>
+                              <button mat-button>LIKE</button>
+                              <button mat-button>SHARE</button>
+                            </mat-card-actions>
+                          </mat-card>
+                    </div>
+                    <div class="col-md-4" style="margin-top: 25px;">
+                        <mat-card class="example-card">
+                            <mat-card-header>
+                              <div mat-card-avatar class="example-header-image"></div>
+                              <mat-card-title>Shiba Inu</mat-card-title>
+                              <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+                            </mat-card-header>
+                            <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+                            <mat-card-content>
+                              <p>
+                                The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                                A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                                bred for hunting.
+                              </p>
+                            </mat-card-content>
+                            <mat-card-actions>
+                              <button mat-button>LIKE</button>
+                              <button mat-button>SHARE</button>
+                            </mat-card-actions>
+                          </mat-card>
+                    </div>
+                    <div class="col-md-4" style="margin-top: 25px;">
+                        <mat-card class="example-card">
+                            <mat-card-header>
+                              <div mat-card-avatar class="example-header-image"></div>
+                              <mat-card-title>Shiba Inu</mat-card-title>
+                              <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+                            </mat-card-header>
+                            <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+                            <mat-card-content>
+                              <p>
+                                The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                                A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                                bred for hunting.
+                              </p>
+                            </mat-card-content>
+                            <mat-card-actions>
+                              <button mat-button>LIKE</button>
+                              <button mat-button>SHARE</button>
+                            </mat-card-actions>
+                          </mat-card>
+                    </div> -->
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- <div fxLayout="row" style="margin-top: 20px">
+    <div #container fxFlex="50" *ngFor="let product of this.products" style="margin:5px">
+      <ng-image-slider [images]="product.images" [manageImageRatio]="false"
+        [imageSize]="{width: container.offsetWidth, height: container.offsetWidth, space:0}">
+      </ng-image-slider>
+    </div>
+  </div> -->

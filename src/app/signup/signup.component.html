@@ -1,0 +1,190 @@
+<div class="register">
+    <div fxLayoutAlign="center center" fxFlexFill class="main-div">
+
+        <mat-card fxFlex="25" class="mat-elevation-z0 mtcard">
+    
+            <mat-toolbar class="primary-tbar mtcard" fxLayoutAlign="center center">Signup Page
+                <div fxLayoutAlign="center center" style="margin:10px" *ngIf="loginStatus">
+                    <mat-spinner [diameter]="25"></mat-spinner>
+                </div>
+    
+            </mat-toolbar>
+    
+            <form fxLayoutAlign="stretch" fxLayout="column" class="login-form">
+    
+                <mat-form-field>
+                    <mat-label>Fullname</mat-label>
+                    <input matInput [(ngModel)]="loginData.fullname" #fullname="ngModel" id="fullname" name="fullname" placeholder="Enter fullname" required
+                    class="primary">
+                </mat-form-field>
+    
+                <!-- <span *ngIf="!loginData.password">Password needed</span> -->
+                <div *ngIf="fullname.invalid && (fullname.dirty || fullname.touched)">
+                    <div *ngIf="fullname.errors?.required" style="color:brown;">
+                        Fullname is required.
+                    </div>
+                </div>
+    
+                <mat-form-field>
+                    <mat-label>Enter Email</mat-label>
+                    <input matInput [(ngModel)]="loginData.email" name="email" #email="ngModel"
+                    id="email" pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}" required type="email">
+                </mat-form-field>
+                <div *ngIf="email.invalid && (email.dirty || email.touched)" >
+                    <div *ngIf="email.errors?.required" style="color:brown;">
+                        Email is required.
+                    </div>
+                    <div *ngIf="email.errors?.pattern" style="color:brown;">
+                        Please Enter Valid Email Address.
+                    </div>
+                </div>
+    
+                <mat-form-field>
+                    <mat-label>Enter Phone number</mat-label>
+                    <input matInput [(ngModel)]="loginData.mobile" name="mobile" #mobile="ngModel"
+                    id="mobile" pattern="^[7-9][0-9]{9}$" required type="mobile">
+                </mat-form-field>
+                <div *ngIf="mobile.invalid && (mobile.dirty || mobile.touched)" >
+                    <div *ngIf="email.errors?.required" style="color:brown;">
+                        Phone number is required.
+                    </div>
+                    <div *ngIf="mobile.errors?.pattern" style="color:brown;">
+                        Please Enter Valid Phone number.
+                    </div>
+                </div>
+    
+                <mat-form-field>
+                    <mat-label>Username</mat-label>
+                    <input matInput [(ngModel)]="loginData.username" #username="ngModel" id="username" name="username" placeholder="Enter Username" required
+                    class="primary">
+                </mat-form-field>
+                <div *ngIf="username.invalid && (username.dirty || username.touched)" >
+                    <div *ngIf="username.errors?.required" style="color:brown;">
+                        Username is required.
+                    </div>
+                </div>
+    
+                <mat-form-field>
+                    <mat-label>Password</mat-label>
+                    <input matInput type="password" [(ngModel)]="loginData.password" #password="ngModel" id="password" name="password" placeholder="Enter password" required
+                    class="primary" [type]="hide ? 'password' : 'text'" minlength="4">
+                    <button mat-icon-button matSuffix (click)="hide = !hide" type="button">
+                        <mat-icon *ngIf="hide">visibility_off</mat-icon>
+                        <mat-icon *ngIf="!hide">visibility</mat-icon>
+                    </button>
+                </mat-form-field>
+                <div *ngIf="password.invalid && (password.dirty || password.touched)">
+                    <div *ngIf="password.errors?.required" style="color:brown;">
+                        Password is required.
+                    </div>
+                </div>
+                <div *ngIf="password.errors?.minlength" style="color:brown;">
+                    Password must be at least 4 characters long.
+                </div>
+    
+                <mat-form-field>
+                    <mat-label>Confirm Password</mat-label>
+                    <input matInput [(ngModel)]="loginData.confPassword" name="confPassword" pattern="{{ loginData.password }}" #confPassword="ngModel"
+                        id="confPassword" required [type]="hide ? 'password' : 'text'">
+                </mat-form-field>
+    
+                <!-- <div *ngIf="confPassword.invalid && (confPassword.dirty || confPassword.touched) || password.invalid && (password.dirty || password.touched)" >
+                    <div *ngIf="confPassword.errors?.required || confPassword.errors?.required" style="color:brown;">
+                        Password is required.
+                    </div>
+                </div> -->
+    
+                <div *ngIf="confPassword.errors?.pattern" style="color:brown;">
+                    Passwords Mismatch, Please check.
+                </div>
+    
+    
+                <div class="row">
+    
+                    <div class="col-md-6">
+    
+                        <div style="width: 45;">
+                            <mat-form-field id="continent" appearance="fill">
+                                <mat-label>Continent</mat-label>
+                                <mat-select [(value)]="loginData.continent" [formControl]="cont">
+                                    <mat-option (click)="onContinentChange()" [value]="option" *ngFor="let option of continents">{{ option }}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <span style="margin-top: -38px; margin-left:0px; color:red"
+                            *ngIf="!loginData.continent && (cont.touched || cont.dirty)">Please select Continent.</span>
+                    
+                    </div>
+                    <div class="col-md-6">
+    
+                        <div style="width: 45;">
+                        
+                            <mat-form-field id="country" appearance="fill">
+                                <mat-label>Country</mat-label>
+                                <mat-select [(value)]="loginData.country" [formControl]="country">
+                                    <mat-option (click)="onCountryChange()" [value]="option.country" *ngFor="let option of countriesList">{{
+                                        option.country }}</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <span style="margin-top: -38px; margin-left:0px; color:red" *ngIf="!loginData.continent && (country.touched || country.dirty)">Please select Continent First.</span>
+                        <span style="margin-top: -38px; margin-left:0px; color:red" *ngIf="loginData.continent && !loginData.country && (country.touched || country.dirty)">Please select country.</span>
+                   
+                    </div>
+                </div>
+                <mat-form-field id="language" appearance="fill">
+                    <mat-label>Language</mat-label>
+                    <mat-select [(value)]="loginData.language" [formControl]="lang">
+                        <!-- <mat-option></mat-option> -->
+                        <mat-option [value]="option" *ngFor="let option of languagesList">{{ option }}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <span style="margin-top: -38px; margin-left:10px; color:red"
+                    *ngIf="!loginData.country && (lang.touched || lang.dirty)">Please select Country First.</span>
+                <span style="margin-top: -38px; margin-left:10px; color:red"
+                    *ngIf="loginData.country && !loginData.language && (lang.touched || lang.dirty)">Please select Language.</span>
+    
+    
+                <!-- <mat-form-field>
+                    <mat-label>Password</mat-label>
+                    <input matInput [(ngModel)]="loginData.password" name="password" #password="ngModel" id="password"
+                     required [type]="hide ? 'password' : 'text'" minlength="4">
+                    <button mat-icon-button matSuffix (click)="hide = !hide" type="button">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                </mat-form-field> -->
+    
+                <!-- <div *ngIf="password.invalid && (password.dirty || password.touched)" >
+                    <div *ngIf="password.errors?.required" style="color:brown;">
+                        Password is required.
+                    </div>
+                </div>
+    
+                <div *ngIf="password.errors?.minlength" style="color:brown;">
+                    Password must be at least 4 characters long.
+                </div> -->
+    
+                <button mat-raised-button type="submit" (click)="onSignup()" class="btn mtcard">Signup</button>
+    
+                <div fxLayoutAlign="center center">
+                    <p style="margin-top:25px">Already regestered ? &nbsp;
+                        <a routerLink="/login">Login Here.</a>
+                    </p>
+                </div>
+    
+            </form>
+            
+            <div fxLayoutAlign="center center" *ngIf="NotifErrors && NotifErrors.message" style="color:brown;">
+                {{NotifErrors.message}}
+            </div>
+            
+    
+        </mat-card>
+    </div>
+    
+</div>
+
+<!-- <div *ngIf="loginStatus">
+
+</div> -->

@@ -1,0 +1,68 @@
+.page__box{
+    color: white;
+    padding: 0 1rem;
+    background: #f1f5f9;
+    min-height: 120px;
+
+    background: #1e293b;
+    margin: 0 -1rem;
+    font-size: 36px;
+}
+
+.page__content{
+    color: white;
+    padding: 0 1rem;
+    background: #f1f5f9;
+    min-height: 120px;
+
+    min-height: calc(100vh - 160px);
+    border-radius: 10px;
+    /* margin-top: -2rem; */
+    background: white;
+    color: black;
+    font-size: 2rem;
+
+}
+.page__content-data{
+    /* color: white;
+    padding: 0 1rem;
+    background: #f1f5f9;
+    min-height: 120px;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+    overflow-x: hidden;
+    /* overflow-y: auto; */
+}
+
+.example-card {
+    max-width: 95%;
+    max-height: 100%;
+    background: rgb(171, 115, 223);
+  }
+  
+  .example-header-image {
+    background-size: cover;
+  }
+  ::ng-deep .mat-card-image{
+      height: 200px;
+  }
+  ::ng-deep .mat-card-header{
+    height: 50px;
+  }
+
+  ::ng-deep .mat-card-title{
+    height: 20px;
+  }
+
+  ::ng-deep .mat-card-header .mat-card-title {
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+::ng-deep .mat-card-content{
+    height: 70px;
+}
+::ng-deep .mat-card-actions{
+    margin-top: 15px;
+}

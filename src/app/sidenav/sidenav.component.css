@@ -1,0 +1,44 @@
+
+  .logo {
+    text-align: center;
+    padding: 2.6rem 1rem;
+
+  } img {
+    width: 200px;
+  }
+
+.mat-icon{
+    vertical-align: center;
+    margin-right: 1rem;
+}
+
+.mat-divider{
+
+    border-top-width: 2px;
+    border-color: white;
+}
+.mat-list-item{
+    color: #9483b9 !important;
+    font-size: 0.8rem;
+    height: 44px !important;
+    margin-bottom: 4px;
+    border-radius: 5px;
+    margin:0 8px;
+}
+.list-item-active{
+    background-color: white;
+}
+.mat-list-item:hover {
+    font-weight: bold;
+    background-color: rgb(51, 50, 50);
+  }
+
+  .mat-subheader {
+    color: #9483b9;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+  }
+  li{
+    list-style-type: none;
+  }

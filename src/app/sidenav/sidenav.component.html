@@ -1,0 +1,43 @@
+<mat-nav-list style="overflow-x: hidden;">
+    <!-- <div class=".logo"> -->
+        <!-- class="log py-4" -->
+        <img alt="Logo" style="width: 259px;height: 70px;margin-top: -7px;"
+            src="https://inkdrestack-production.s3.amazonaws.com/uploads/template_image/image/5835/large_b3f338707a36012c640f0016cbab2572.jpg">
+    <!-- </div> -->
+    <mat-divider></mat-divider>
+    <br>
+    <!-- <h2 matSubheader class="mt-2"> Former Market</h2> -->
+    <li [routerLink]="['/home']">
+        <a mat-list-item routerLinkActive="list-item-active">
+            <mat-icon>home</mat-icon> Home
+        </a>
+    </li>
+
+    <li [routerLink]="['/dashboard']">
+        <a mat-list-item routerLinkActive="list-item-active">
+            <mat-icon>dashboard</mat-icon> Dashboard
+        </a>
+    </li>
+    <li [routerLink]="['/messages']">
+        <a mat-list-item routerLinkActive="list-item-active">
+            <mat-icon>chat</mat-icon> Messages
+        </a>
+
+    </li>
+    <li>
+        <a mat-list-item>
+            <mat-icon>edit</mat-icon> Ex 01
+        </a>
+    </li>
+
+    <li>
+        <a mat-list-item>
+            <mat-icon>edit</mat-icon> Ex 02
+        </a>
+    </li>
+    <li>
+        <a mat-list-item>
+            <mat-icon>edit</mat-icon> Ex 03
+        </a>
+    </li>
+</mat-nav-list>
