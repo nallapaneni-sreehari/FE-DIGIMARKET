@@ -28,7 +28,7 @@ export class HomeComponent implements OnInit {
           thumbImage:"https://images.theconversation.com/files/227374/original/file-20180712-27021-7iamol.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=900.0&fit=crop"
         }
       ],
-      profile:"http://210.212.217.214/r15pics/R151149.jpg"
+      profile:"https://www.pngall.com/wp-content/uploads/5/User-Profile-PNG-High-Quality-Image.png"
     },
 
     {
@@ -47,7 +47,7 @@ export class HomeComponent implements OnInit {
           image:"https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/CottonPlant.JPG/1200px-CottonPlant.JPG",
           thumbImage:"https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/CottonPlant.JPG/1200px-CottonPlant.JPG"
         }
-      ],profile:"http://210.212.217.214/r15pics/R151178.jpg"
+      ],profile:"https://www.pngall.com/wp-content/uploads/5/User-Profile-PNG-High-Quality-Image.png"
     },
     {
       userName: "Venkatesh", userId: "@venky6123", 
@@ -66,7 +66,7 @@ export class HomeComponent implements OnInit {
           thumbImage:"https://kj1bcdn.b-cdn.net/media/24665/nut.jpg?format=webp&width=1080&upscale=false"
         }
       ]
-      ,profile:"http://210.212.217.214/r15pics/R151146.jpg"
+      ,profile:"https://www.pngall.com/wp-content/uploads/5/User-Profile-PNG-High-Quality-Image.png"
     },
     {
       userName: "Sreenivas", userId: "@srinu007", 
@@ -86,7 +86,7 @@ export class HomeComponent implements OnInit {
           thumbImage:"https://i0.wp.com/post.healthline.com/wp-content/uploads/2019/09/blue-java-bananas-1296x728-header-1296x728.jpg?w=1155&h=1528"
         }
       ],
-      profile:"http://210.212.217.214/r15pics/R151137.jpg"
+      profile:"https://www.pngall.com/wp-content/uploads/5/User-Profile-PNG-High-Quality-Image.png"
     }
   ]
 

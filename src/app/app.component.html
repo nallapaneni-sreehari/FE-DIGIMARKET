@@ -3,7 +3,7 @@
     <mat-drawer *ngIf="showHead" mode="side" [opened]="sidebarOpen">
         <app-sidenav></app-sidenav>
     </mat-drawer>
-    <mat-drawer-content>
+    <mat-drawer-content style="overflow:hidden">
         <app-header *ngIf="showHead" (toggleSidebarForMe)="sidebarToggler()"></app-header>
         <router-outlet></router-outlet>
     </mat-drawer-content>

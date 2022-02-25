@@ -23,9 +23,9 @@ export class LoginComponent implements OnInit {
     this._global.noHeader=true;
     this._global.noSideNav=true;
 
-    if(localStorage.getItem("user")){
-      this._router.navigate(['/home']);
-    }
+    // if(localStorage.getItem("user")){
+    //   this._router.navigate(['/home']);
+    // }
   }
 
   onLogin(){
@@ -37,11 +37,12 @@ export class LoginComponent implements OnInit {
     // }
     
     this._global.loginService(this.loginData).subscribe(data=>{
-      this.loginResponse = data[0];
+      this.loginResponse = data;
       console.log("Resp:::", this.loginResponse);
-      if(this.loginResponse && this.loginResponse.status=="success"){
-        console.log("In first IF");
-        localStorage.setItem("user",this.loginResponse.username);
+      if(this.loginResponse && this.loginResponse.statusCode==200){
+        localStorage.setItem("email",this.loginResponse.data.email);
+        localStorage.setItem("token",this.loginResponse.data.token);
+
         this._router.navigate(['/home']);
       }
       else{

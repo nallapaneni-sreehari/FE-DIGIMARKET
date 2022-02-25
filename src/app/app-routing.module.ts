@@ -9,11 +9,10 @@ import { SidenavComponent } from './sidenav/sidenav.component';
 import { SignupComponent } from './signup/signup.component';
 
 const routes: Routes = [
-  {path:'', redirectTo:'home', pathMatch:'full'},
+  {path:'', component: LoginComponent},
+  {path:'signup', component: SignupComponent},
   {path:'login', component:LoginComponent},
-  {path:'signup', component:SignupComponent},
   {path:'resetpassword', component:ResetpasswordComponent},
-
   {path:'home', component:HomeComponent},
   {path:'dashboard', component:DashboardComponent},
   {path:'messages', component:MessagesComponent},

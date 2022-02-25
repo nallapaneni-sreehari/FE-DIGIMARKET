@@ -42,9 +42,9 @@ export class SignupComponent implements OnInit {
   ngOnInit(): void {
     this._global.noHeader=true;
     this._global.noSideNav=true;
-    if(localStorage.getItem("user")){
-      this._router.navigate(['/home']);
-    }
+    // if(localStorage.getItem("user")){
+    //   this._router.navigate(['/home']);
+    // }
   }
 
   onSignup(){
@@ -55,13 +55,16 @@ export class SignupComponent implements OnInit {
     //   password:this.loginData.password
     // }
     
-    this._global.loginService(this.loginData).subscribe(data=>{
-      this.loginResponse = data[0];
+    this._global.signUpService(this.loginData).subscribe(data=>{
+      this.loginResponse = data;
       console.log("Resp:::", this.loginResponse);
-      if(this.loginResponse && this.loginResponse.status=="success"){
+      if(this.loginResponse && this.loginResponse.statusCode==201){
         console.log("In first IF");
-        localStorage.setItem("user",this.loginResponse.username);
-        this._router.navigate(['/home']);
+        // localStorage.setItem("user",this.loginResponse.username);
+        alert("Signup success please Login !")
+        setTimeout(()=>{
+          this._router.navigate(['/login']);
+        }, 2000);
       }
       else{
         console.log("Login Failed", this.loginResponse.status);

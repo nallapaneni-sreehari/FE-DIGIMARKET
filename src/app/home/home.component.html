@@ -7,6 +7,24 @@
 
                     <div class="col-md-4" style="margin-top: 25px;" *ngFor="let user of userData">
                         <mat-card class="example-card">
+                          <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" style="float: right">
+                            <mat-icon>more_vert</mat-icon>
+                          </button>
+                          <mat-menu #menu="matMenu">
+                            <button mat-menu-item>
+                              <!-- <mat-icon>dialpad</mat-icon> -->
+                              <span>Not interested</span>
+                            </button>
+                            <button mat-menu-item>
+                              <!-- <mat-icon>voicemail</mat-icon> -->
+                              <span>Report</span>
+                            </button>
+                            <!-- <button mat-menu-item>
+                              <mat-icon>notifications_off</mat-icon>
+                              <span></span>
+                            </button> -->
+                          </mat-menu>
+
                             <mat-card-header>
                               <!-- <div mat-card-avatar class="example-header-image"></div> -->
                             <img mat-card-avatar class="example-header-image" src="{{user.profile}}" alt="Photo of {{user.userName}}">
@@ -28,7 +46,7 @@
                             </ng-image-slider> -->
 
                             <ng-image-slider [images]="user.img" [manageImageRatio]="false"
-                                  [imageSize]="{width: 315, height: 200, space:10}" [animationSpeed]="1">
+                                  [imageSize]="{width: 435, height: 200, space:10}" [animationSpeed]="1">
                             </ng-image-slider>
 
                             <mat-card-content>

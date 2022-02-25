@@ -53,7 +53,7 @@
                     </div>
                 </div>
     
-                <mat-form-field>
+                <!-- <mat-form-field>
                     <mat-label>Username</mat-label>
                     <input matInput [(ngModel)]="loginData.username" #username="ngModel" id="username" name="username" placeholder="Enter Username" required
                     class="primary">
@@ -62,7 +62,7 @@
                     <div *ngIf="username.errors?.required" style="color:brown;">
                         Username is required.
                     </div>
-                </div>
+                </div> -->
     
                 <mat-form-field>
                     <mat-label>Password</mat-label>
@@ -165,7 +165,7 @@
                     Password must be at least 4 characters long.
                 </div> -->
     
-                <button mat-raised-button type="submit" (click)="onSignup()" class="btn mtcard">Signup</button>
+                <button mat-raised-button type="submit" (click)="onSignup()" class="btn mtcard" style="background-color: aquamarine;">Signup</button>
     
                 <div fxLayoutAlign="center center">
                     <p style="margin-top:25px">Already regestered ? &nbsp;

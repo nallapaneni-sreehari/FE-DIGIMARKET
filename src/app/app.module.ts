@@ -31,6 +31,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatBadgeModule} from '@angular/material/badge';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 
 import { SignupComponent } from './signup/signup.component';
@@ -52,6 +53,7 @@ import { LoginComponent } from './login/login.component';
     MessagesComponent
   ],
   imports: [
+    MatGridListModule,
     MatBadgeModule,
     MatProgressSpinnerModule,
     MatInputModule,
